@@ -8,6 +8,10 @@ try{
         echo"<script>alert('Debe Llenar los campos vacios');window.location.href='index.php';</script>";
         die();
     }*/
+    
+    $mysqli = new mysqli(getenv("MYSQL_ADDON_HOST"),getenv("MYSQL_ADDON_USER"), getenv("MYSQL_ADDON_PASSWORD"),getenv("MYSQL_ADDON_DB"));
+    $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'");
+    
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),
         getenv("MYSQL_ADDON_USER"),
