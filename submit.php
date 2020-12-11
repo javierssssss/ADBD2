@@ -9,8 +9,15 @@ try{
         die();
     }*/
     
-    $mysqli = new mysqli(getenv("MYSQL_ADDON_HOST"),getenv("MYSQL_ADDON_USER"), getenv("MYSQL_ADDON_PASSWORD"),getenv("MYSQL_ADDON_DB"));
-    $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'");
+    $mysqli =mysqli_connect(getenv("MYSQL_ADDON_HOST"),getenv("MYSQL_ADDON_USER"), getenv("MYSQL_ADDON_PASSWORD"),getenv("MYSQL_ADDON_DB"));
+    if (mysqli_connect_errno())
+          {
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+          }else{
+              $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'");
+            }
+    
+  
     
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),
