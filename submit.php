@@ -14,7 +14,7 @@ try{
         getenv("MYSQL_ADDON_PASSWORD")
     );
     if ( isset($bdd) ) {
-        $sql="SELECT * FROM users WHERE usuario='".$un;//."' AND clave = '".$pwd."'";
+        $sql="SELECT * FROM users WHERE usuario=".$un;//."' AND clave = '".$pwd."'";
         echo $sql;
         $stmt = $bdd->query($sql);
         /*$stmt->bindValue(':un', 'Joe');
