@@ -24,12 +24,12 @@ try{
         $result = $stmt->fetchAll();
         //echo count($result) ;
         if (count($result) == 1){
-            //echo "Logueado";
+            echo "Logueado";
             session_status();
             $_SESSION["conectado"]="C";
             //header('Location: https://sql-injection-insecure.cleverapps.io/ ');
         }else{
-            header('Location: https://sql-injection-insecure.cleverapps.io/ ');
+           // header('Location: https://sql-injection-insecure.cleverapps.io/ ');
         }
        
     
