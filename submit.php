@@ -16,10 +16,11 @@ try{
           }else{
               
         /* Consultas de selección que devuelven un conjunto de resultados */
-       
-                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario='".$un."'")) {
-                    printf("La selección devolvió %d filas.\n", $resultado->num_rows);
-                    
+                   // $sql2="SELECT * FROM users WHERE usuario='".$un."'";
+                    echo $sql2;
+                if ($resultado = $mysqli->query($sql2)) {
+                    printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
+                    printf($resultado);
                     /* liberar el conjunto de resultados */
                     $resultado->close();
                 }
