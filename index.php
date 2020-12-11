@@ -23,7 +23,7 @@ session_status();
             <!-- Password -->
             <label for="username">Clave:</label>
            
-            <input required type="password" name="clave" >
+            <input  type="password" name="clave" >
             <div id="lower">
                 <!-- Submit Button -->
                 <input type="submit" value="Login">
