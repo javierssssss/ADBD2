@@ -1,8 +1,8 @@
 <?php
 try{
     session_start();
-    $un = $_GET['usuario'];
-    $pwd = $_GET['clave'];
+    $un = $_POST['usuario'];
+    $pwd = $_POST['clave'];
 
    /* if(empty($un) || empty($pwd)){
         echo"<script>alert('Debe Llenar los campos vacios');window.location.href='index.php';</script>";
@@ -21,6 +21,7 @@ try{
                 if ($resultado = $mysqli->query($sql2)) {
                     printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
                     printf($resultado);
+                     printf("La CONSULTA devolvió %d filas.\n   ", mysqli_num_rows($resultado));
                     /* liberar el conjunto de resultados */
                     $resultado->close();
                 }
