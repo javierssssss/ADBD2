@@ -22,9 +22,10 @@ try{
                    // printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
                     //printf($resultado);
                     while ($row = $resultado->fetch_assoc()) {
-                    echo $row['usuario']."<br>";
-                      echo "<h1>Hello Uusario, </h1> <p>Welcome  $row['usuario']</p>";  
-                    echo $row['id']."<br>";
+                    
+                      echo "<h1> Bienvenido ! </h1> ";
+                        echo $row['usuario']."<br>";
+                         echo $row['id']."<br>";
                         echo $row['clave']."<br>";
                     }
                      printf("La CONSULTA devolvió %d filas.\n   ", mysqli_num_rows($resultado));
