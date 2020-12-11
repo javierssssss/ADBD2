@@ -20,10 +20,13 @@ try{
                     echo $sql2;
                 if ($resultado = $mysqli->query($sql2)) {
                     printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
-                    printf($resultado);
+                    //printf($resultado);
+                    while ($row = $resultado->fetch_assoc()) {
+                    echo $row;
+                    }
                      printf("La CONSULTA devolvió %d filas.\n   ", mysqli_num_rows($resultado));
                     /* liberar el conjunto de resultados */
-                    $resultado->close();
+                   // $resultado->close();
                 }
             }
     
