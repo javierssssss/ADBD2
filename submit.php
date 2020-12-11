@@ -14,27 +14,28 @@ try{
         getenv("MYSQL_ADDON_PASSWORD")
     );
     if ( isset($bdd) ) {
-        
-        $stmt = $bdd->prepare("SELECT * FROM users WHERE  BINARY  usuario=:un AND BINARY  clave = :pwd");
+        $sql="SELECT * FROM users WHERE usuario=".$un." AND clave = ".$pwd;
+        echo $sql;
+        $stmt = $bdd->query($sql);
         /*$stmt->bindValue(':un', 'Joe');
         $stmt->bindValue(':pwd', 'Joe');*/
 
-        $stmt->execute(['un' => $un, 'pwd' => $pwd]); 
+        
         $result = $stmt->fetchAll();
         //echo count($result) ;
         if (count($result) == 1){
             //echo "Logueado";
             session_status();
             $_SESSION["conectado"]="C";
-            header('Location: https://sql-injection.cleverapps.io ');
+            //header('Location: https://sql-injection-insecure.cleverapps.io/ ');
         }else{
-            header('Location: https://sql-injection.cleverapps.io ');
+            header('Location: https://sql-injection-insecure.cleverapps.io/ ');
         }
        
     
     }else{
         die("Connection failed: " . $conn->connect_error);
-        header('Location: https://sql-injection.cleverapps.io ');
+        header('Location: https://sql-injection-insecure.cleverapps.io/ ');
     }
 }catch(Exception $e){
    // echo $e->getMessage();
