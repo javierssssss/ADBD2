@@ -22,7 +22,8 @@ try{
                     printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
                     //printf($resultado);
                     while ($row = $resultado->fetch_assoc()) {
-                    echo $row;
+                    echo $row['usuario']."<br>";
+                    echo $row['id']."<br>";
                     }
                      printf("La CONSULTA devolvió %d filas.\n   ", mysqli_num_rows($resultado));
                     /* liberar el conjunto de resultados */
@@ -40,21 +41,21 @@ try{
     if ( isset($bdd) ) {
         $sql="SELECT * FROM users WHERE usuario=".$un;//."' AND clave = '".$pwd."'";
         //echo $sql;
-        $stmt = $bdd->query($sql);
+        //$stmt = $bdd->query($sql);
         /*$stmt->bindValue(':un', 'Joe');
         $stmt->bindValue(':pwd', 'Joe');*/
 
         
-        $result = $stmt->fetch();
+       // $result = $stmt->fetch();
         //echo count($result) ;
         if (count($result) == 1){
-            echo "Logueado";
+        /*    echo "Logueado";
             session_status();
             $_SESSION["conectado"]="C";
             //header('Location: https://sql-injection-insecure.cleverapps.io/ ');
         }else{
            // header('Location: https://sql-injection-insecure.cleverapps.io/ ');
-        }
+        }*/
        
     
     }else{
@@ -62,7 +63,7 @@ try{
         header('Location: https://sql-injection-insecure.cleverapps.io/ ');
     }
 }catch(Exception $e){
-   // echo $e->getMessage();
+    echo $e->getMessage();
 }
 
 
