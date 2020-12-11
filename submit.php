@@ -9,7 +9,7 @@ try{
         die();
     }*/
     
-    $mysqli =mysqli_connect(getenv("MYSQL_ADDON_HOST"),getenv("MYSQL_ADDON_USER"), getenv("MYSQL_ADDON_PASSWORD"),getenv("MYSQL_ADDON_DB"));
+    $mysqli =mysqli_connect("bhvwdg72l0bnufzp3gpg-mysql.services.clever-cloud.com","uoca9nox9xiwuvtp", "ps1rlXdplonnVpJe1Rqb","bhvwdg72l0bnufzp3gpg");
     if (mysqli_connect_errno())
           {
           echo "Failed to connect to MySQL: " . mysqli_connect_error();
