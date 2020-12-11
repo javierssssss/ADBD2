@@ -19,11 +19,11 @@ session_status();
         <form method="post" name="formulario" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
-            <input  type="name" name="usuario" required>
+            <input  type="name" name="usuario" >
             <!-- Password -->
             <label for="username">Clave:</label>
            
-            <input required type="password" name="clave" required>
+            <input required type="password" name="clave" >
             <div id="lower">
                 <!-- Submit Button -->
                 <input type="submit" value="Login">
