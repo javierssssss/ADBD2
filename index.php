@@ -16,7 +16,7 @@ session_status();
 <body>
     <div id="container">
     <?php       if (!isset($_SESSION['conectado'])    ): ?>
-        <form method="get" action="submit.php">
+        <form method="get" name="formulario" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
             <input  type="name" name="usuario" required>
