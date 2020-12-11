@@ -48,7 +48,7 @@ try{
         
        // $result = $stmt->fetch();
         //echo count($result) ;
-        if (count($result) == 1){
+       // if (count($result) == 1){
         /*    echo "Logueado";
             session_status();
             $_SESSION["conectado"]="C";
