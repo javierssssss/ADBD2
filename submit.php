@@ -16,7 +16,7 @@ try{
           }else{
               
         /* Consultas de selección que devuelven un conjunto de resultados */
-                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'")) {
+                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario = {$_GET['usuario']}")) {
                     printf("La selección devolvió %d filas.\n", $resultado->num_rows);
 
                     /* liberar el conjunto de resultados */
