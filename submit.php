@@ -17,7 +17,7 @@ try{
               
         /* Consultas de selección que devuelven un conjunto de resultados */
        
-                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario=".$un)) {
+                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario='".$un."'")) {
                     printf("La selección devolvió %d filas.\n", $resultado->num_rows);
                     
                     /* liberar el conjunto de resultados */
