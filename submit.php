@@ -1,8 +1,8 @@
 <?php
 try{
     session_start();
-    $un = $_POST['usuario'];
-    $pwd = $_POST['clave'];
+    $un = $_GET['usuario'];
+    $pwd = $_GET['clave'];
 
    /* if(empty($un) || empty($pwd)){
         echo"<script>alert('Debe Llenar los campos vacios');window.location.href='index.php';</script>";
