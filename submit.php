@@ -16,7 +16,7 @@ try{
           }else{
               
         /* Consultas de selección que devuelven un conjunto de resultados */
-                   // $sql2="SELECT * FROM users WHERE usuario='".$un."'";
+                    $sql2="SELECT * FROM users WHERE usuario='".$un."'";
                     echo $sql2;
                 if ($resultado = $mysqli->query($sql2)) {
                     printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
@@ -35,7 +35,7 @@ try{
     );
     if ( isset($bdd) ) {
         $sql="SELECT * FROM users WHERE usuario=".$un;//."' AND clave = '".$pwd."'";
-        echo $sql;
+        //echo $sql;
         $stmt = $bdd->query($sql);
         /*$stmt->bindValue(':un', 'Joe');
         $stmt->bindValue(':pwd', 'Joe');*/
