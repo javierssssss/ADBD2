@@ -14,7 +14,14 @@ try{
           {
           echo "Failed to connect to MySQL: " . mysqli_connect_error();
           }else{
-              $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'");
+              
+        /* Consultas de selección que devuelven un conjunto de resultados */
+                if ($resultado = $mysqli->query("SELECT * FROM users WHERE usuario = '{$_GET['usuario']}'")) {
+                    printf("La selección devolvió %d filas.\n", $resultado->num_rows);
+
+                    /* liberar el conjunto de resultados */
+                    $resultado->close();
+                }
             }
     
   
@@ -32,7 +39,7 @@ try{
         $stmt->bindValue(':pwd', 'Joe');*/
 
         
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetch();
         //echo count($result) ;
         if (count($result) == 1){
             echo "Logueado";
