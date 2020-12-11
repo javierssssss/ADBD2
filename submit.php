@@ -17,7 +17,7 @@ try{
               
         /* Consultas de selección que devuelven un conjunto de resultados */
                     $sql2="SELECT * FROM users WHERE usuario='".$un."' AND CLAVE = '".$pwd."'";
-                    echo $sql2;
+                    //echo $sql2;
                 if ($resultado = $mysqli->query($sql2)) {
                    // printf("La selección devolvió %d filas.\n   ", $resultado->num_rows);
                     //printf($resultado);
